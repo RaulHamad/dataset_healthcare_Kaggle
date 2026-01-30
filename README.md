@@ -26,7 +26,23 @@ El proyecto fue estructurado en tres etapas principales, utilizando técnicas ex
 
 * **Subespacio Aleatorio:** Creación de 10 datasets para filtrar "ruido" de atributos.
 * **Validación:** K-Fold (10 pliegues) para solidez estadística.
-* **Optimización:** **44.26% de precisión** alcanzado mediante `GridSearchCV`.
+* **Optimización:** **43.81% de precisión** alcanzado mediante `GridSearchCV`.
+
+![](https://github.com/RaulHamad/dataset_healthcare_Kaggle/blob/main/images/grafico.png)
+
+### 4. Escalamiento Sintético y Curva de Aprendizaje (SMOTE)
+**Archivo:** *[04_Experimental_Focus.ipynb](https://github.com/RaulHamad/dataset_healthcare_Kaggle/blob/main/04_Experimental_Focus.ipynb)*
+
+Nesta fase, investigamos o impacto do volume de dados na performance dos modelos utilizando o subespaço otimizado de 40% de atributos.
+
+* **Metodologia:** Expansão do dataset de 38k para 100k instâncias utilizando **SMOTE** para gerar dados sintéticos e **Resampling** para reduções estratégicas.
+* **Objetivo:** Identificar o "ponto de saturação" onde dados sintéticos deixam de ajudar e começam a introduzir ruído.
+* **Ponto Ótimo:** A melhor performance foi atingida com **50.000 instâncias**, elevando a acurácia para **42.03%**.
+
+#### 📈 Curva de Aprendizado
+O gráfico abaixo ilustra a evolução da acurácia. Note que após as 50k instâncias, a performance começa a degradar, caracterizando o **Overfitting Sintético**.
+
+![Gráfico de Curva de Aprendizado](https://github.com/RaulHamad/dataset_healthcare_Kaggle/blob/main/images/04_grafico.png)
 
 
 ---
@@ -59,8 +75,16 @@ The project was structured into three main stages, utilizing experimental techni
 
 * **Random Subspace:** Tested 10 datasets (30-80% density) to reduce noise.
 * **Cross-Validation:** 10-fold validation for statistical robustness.
-* **Tuning:** Achieved **44.26% accuracy** using `GridSearchCV` with Random Forest.
+* **Tuning:** Achieved **43.81% accuracy** using `GridSearchCV` with Random Forest.
 
+![](https://github.com/RaulHamad/dataset_healthcare_Kaggle/blob/main/images/grafico.png)
+
+### 4. Synthetic Scaling and Learning Curve (SMOTE)
+* **File:** *[04_Experimental_Focus.ipynb]*
+* **Methodology:** Expanded training set using **SMOTE** to find the saturation point.
+* **Result:** Optimal accuracy reached at **50,000 instances (42.03%)**.
+
+  
 ---
 
 # 🏥 Predição de Resultados de Exames (Kaggle Healthcare Dataset)
@@ -96,7 +120,17 @@ Avaliação sistemática de múltiplos algoritmos para estabelecer uma linha de 
 Focada em extrair o máximo de performance através de técnicas de pesquisa científica:
 * **Random Subspace (Subespaço Aleatório):** Criação de 10 datasets variando a densidade de atributos (de 30% a 80%) para identificar quais colunas geravam "ruído" no modelo.
 * **Validação Cruzada (K-Fold):** Uso de 10-folds para garantir que a acurácia fosse estatisticamente sólida e não fruto do acaso.
-* **Hyperparameter Tuning:** Implementação de `GridSearchCV` para otimizar o Random Forest, alcançando a melhor performance documentada de **44.26% de acurácia** (em um cenário desafiador de 3 classes).
+* **Hyperparameter Tuning:** Implementação de `GridSearchCV` para otimizar o Random Forest, alcançando a melhor performance documentada de **43.81% de acurácia** (em um cenário desafiador de 3 classes).
+
+![](https://github.com/RaulHamad/dataset_healthcare_Kaggle/blob/main/images/grafico.png)
+
+  ### 4. Escalonamento Sintético e Curva de Aprendizado (SMOTE)
+**Arquivo:** *[04_Experimental_Focus.ipynb](https://github.com/RaulHamad/dataset_healthcare_Kaggle/blob/main/04_Experimental_Focus.ipynb)*
+* **Metodologia:** Expansão do dataset de 38k para 100k instâncias via **SMOTE**.
+* **Ponto Ótimo:** A melhor performance foi atingida com **50.000 instâncias** (acurácia de **42.03%**).
+* **Insight:** O aumento excessivo (100k) gerou "Overfitting Sintético", degradando a performance.
+
+![Curva de Aprendizado](https://github.com/RaulHamad/dataset_healthcare_Kaggle/blob/main/images/04_grafico.png)
 
 ---
 
